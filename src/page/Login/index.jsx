@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import authApi from '../../api/auth'
+import authApi from '_api/auth'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import googleIcon from '../../assets/img/icon btn/googleIcon.png'
-import firebase, { auth, db } from '../../firebase/config'
+import firebase, { auth } from '../../firebase/config'
 import { ToastContainer, toast } from 'react-toastify'
-import { setUserToken, getUserToken } from '../../utils/localData'
-import ModalCreateAccount from './components/ModalCreateAccount'
+import { setUserToken, getUserToken } from '_utils/localData'
+import { Form } from 'react-bootstrap'
 import * as Yup from 'yup'
+
+import ModalCreateAccount from './components/ModalCreateAccount'
 
 import 'react-toastify/dist/ReactToastify.css'
 import './style.scss'
@@ -65,7 +67,6 @@ function Login(props) {
   }
 
   const handleLogin = async info => {
-    console.log(info)
     try {
       const data = {
         email: info.email,
@@ -92,18 +93,19 @@ function Login(props) {
       <div className='login__page'>
         <div className='login__page-layout'>
           <p>Digital-Assistant</p>
-          <div className='login__page-form'>
-            <div className='login__page-form-user-name'>
-              <input type='text' name='' id='userName' placeholder='Email address' {...register('email')} />
-            </div>
-
-            <div className='login__page-form-pass'>
-              <input type='password' name='password' id='' placeholder='Password' {...register('password')} />
-            </div>
+          <Form className='login__page-form'>
+            <Form.Group className='mb-3' controlId='exampleForm.ControlInput1'>
+              <Form.Control type='email' placeholder='Email address' {...register('email')} />
+              {errors.email ? <span style={{ color: 'red', float: 'left' }}>{errors.email.message}</span> : ''}
+            </Form.Group>
+            <Form.Group className='mb-3'>
+              <Form.Control type='password' placeholder='Password' {...register('password')} />
+              {errors.password ? <span style={{ color: 'red', float: 'left' }}>{errors.password.message}</span> : ''}
+            </Form.Group>
             <button className='login__page-form-btn' onClick={handleSubmit(handleLogin)}>
               Login
             </button>
-          </div>
+          </Form>
 
           <div className='login__page-btn'>
             <button className='login__page-btn-google' onClick={handleLoginWithGoogle}>
