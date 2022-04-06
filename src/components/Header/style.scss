@@ -1,0 +1,47 @@
+@use "../../scss/" as *;
+.header{
+    background-color: #ffffff !important;
+    box-shadow: rgb(0 0 0 / 10%) 0px 0px 20px !important;
+    height: 56px;
+    &-right{
+
+        &-layout{
+            display: flex
+        }
+
+        &-avatar{
+            position: relative;
+            &-img{
+                @include avatar(36px,36px);
+                margin-left:12px;
+                cursor: pointer;
+            }
+            &-info{
+                position: absolute;
+                width: 300px;
+                padding: 12px;
+                background-color: #ffffff;
+                height: 200px;
+                right: 0;
+                top: 125%;
+                z-index: 1;
+                box-shadow: rgb(0 0 0 / 10%) 0px 0px 20px !important;
+
+            }
+
+        }
+        &-notification{
+            width: 32px;
+            cursor: pointer;
+        }
+        &-btn-logout{
+            border-radius: 30px;
+            background-color: $primary-color;
+            box-shadow: none;
+            border: none;
+        }
+
+    }
+    
+    
+}

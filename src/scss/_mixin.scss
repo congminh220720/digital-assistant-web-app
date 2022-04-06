@@ -1,0 +1,11 @@
+@mixin flex($align-item, $justify-content) {
+    display: flex;
+    align-items: $aligin-item;
+    justify-content: $justify-content;
+}
+@mixin avatar($width,$height) {
+    width: $width;
+    height: $height;
+    border-radius: 50%;
+    object-fit: cover;
+}

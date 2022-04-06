@@ -78,10 +78,10 @@ function ModalCreateAccount({ show, toggleModal }) {
         </Modal.Body>
         <Modal.Footer>
           <Button variant='secondary' onClick={toggleModal}>
-            Close
+            Cancel
           </Button>
           <Button variant='primary' onClick={handleSubmit(onSubmit)}>
-            Save Changes
+            Create
           </Button>
         </Modal.Footer>
       </Modal>

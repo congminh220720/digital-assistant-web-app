@@ -1,9 +1,11 @@
 import React from 'react'
+import Header from '_components/Header'
+import './style.scss'
 
 function Home(props) {
   return (
     <div>
-      <h1>Home page</h1>
+      <Header />
     </div>
   )
 }
