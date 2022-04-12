@@ -5,7 +5,7 @@ module.exports = {
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
       _pages: path.resolve('src/pages'),
-      _images: path.resolve('src/assets/images'),
+      _img: path.resolve('src/assets/img'),
       _fonts: path.resolve('src/assets/fonts'),
       _styles: path.resolve('src/assets/css'),
       _components: path.resolve('src/components'),

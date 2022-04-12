@@ -90,7 +90,7 @@ function Login(props) {
   return (
     <>
       <ToastContainer />
-      <div className='login__page'>
+      <div className='login__page' data-testid='login'>
         <div className='login__page-layout'>
           <p>Digital-Assistant</p>
           <Form className='login__page-form'>
