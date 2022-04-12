@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+
 # testing
 /coverage
 
@@ -11,9 +12,8 @@
 /build
 
 # misc
-env
-vscode
-
+.env
+.vscode
 .DS_Store
 .env.local
 .env.development.local
